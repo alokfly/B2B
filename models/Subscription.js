@@ -9,7 +9,7 @@ const subscriptionSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
+    profile: {
       type: String,
     },
   },
