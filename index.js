@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use("/public", express.static("public"));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
