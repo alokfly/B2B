@@ -12,7 +12,7 @@ module.exports.addSubscription = async (req, res) => {
     description,
     profile,
   });
-  res.status(200).json({ response });
+  res.status(200).json({ msg: "data successfull submitted" });
 };
 
 module.exports.getSubscriptionDetails = async (req, res) => {
