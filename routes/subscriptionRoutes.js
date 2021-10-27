@@ -33,13 +33,14 @@ router.post(
   updateSubscription
 );
 router.get("/deleteSubscription/:id", deleteSubscription);
+
 router.post("/addSubscriptionPoints/:id", addSubscriptionPoints);
-router.get("/getSubscriptionPoints", getSubscriptionPoints);
+router.get("/getSubscriptionPoints/:id", getSubscriptionPoints);
 router.post("/updateSubscriptionPoints/:id", updateSubscriptionPoints);
 router.get("/deleteSubscriptionPoint/:id", deleteSubscriptionPoint);
 
 router.post("/addSubscriptionMonth/:id", addSubscriptionMonth);
-router.get("/getSubscriptionMonth", getSubscriptionMonth);
+router.get("/getSubscriptionMonth/:id", getSubscriptionMonth);
 router.post("/updateSubscriptionMonth/:id", updateSubscriptionMonth);
 router.post("/deleteSubscriptionMonth/:id", deleteSubscriptionMonth);
 module.exports = router;

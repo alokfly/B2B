@@ -70,8 +70,9 @@ module.exports.addSubscriptionPoints = async (req, res) => {
 };
 
 module.exports.getSubscriptionPoints = async (req, res) => {
+  const id = req.params.id;
   try {
-    const response = await SubscriptionPoint.find();
+    const response = await SubscriptionPoint.find({ subcriptionId: id });
     return res.status(200).json(response);
   } catch (error) {
     console.log(error);
@@ -127,8 +128,9 @@ module.exports.addSubscriptionMonth = async (req, res) => {
 };
 
 module.exports.getSubscriptionMonth = async (req, res) => {
+  const id = req.params.id;
   try {
-    const response = await SubscriptionMonth.find();
+    const response = await SubscriptionMonth.find({ subcriptionId: id });
     return res.status(200).json(response);
   } catch (error) {
     console.log(error);

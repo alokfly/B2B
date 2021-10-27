@@ -5,11 +5,11 @@ const subscriptionPointSchema = new Schema(
       type: String,
     },
     subcriptionPoints: {
-      type: Number,
+      type: String,
       required: true,
     },
     isValid: {
-      type: Boolean,
+      type: String,
     },
   },
   { timestamps: true }
