@@ -7,8 +7,11 @@ const Subscription = require("../models/Subscription");
 module.exports.addSubscription = async (req, res) => {
   let profile = req.file ? req.file.filename : null;
   let { name, description } = req.body;
-  let data = new Subscription(name, description, profile);
-  let response = await data.save();
+  const response = await Subscription.create({
+    name,
+    description,
+    profile,
+  });
   res.status(200).json({ response });
 };
 
