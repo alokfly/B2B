@@ -16,6 +16,14 @@ const {
   getSubscriptionDetails,
   updateSubscription,
   deleteSubscription,
+  addSubscriptionPoints,
+  getSubscriptionPoints,
+  updateSubscriptionPoints,
+  deleteSubscriptionPoint,
+  addSubscriptionMonth,
+  getSubscriptionMonth,
+  updateSubscriptionMonth,
+  deleteSubscriptionMonth,
 } = require("../controllers/SubscriptionController");
 router.post("/addSubscription", upload.single("myField"), addSubscription);
 router.get("/getSubscriptionDetails", getSubscriptionDetails);
@@ -25,4 +33,13 @@ router.post(
   updateSubscription
 );
 router.get("/deleteSubscription/:id", deleteSubscription);
+router.post("/addSubscriptionPoints/:id", addSubscriptionPoints);
+router.get("/getSubscriptionPoints", getSubscriptionPoints);
+router.post("/updateSubscriptionPoints/:id", updateSubscriptionPoints);
+router.get("/deleteSubscriptionPoint/:id", deleteSubscriptionPoint);
+
+router.post("/addSubscriptionMonth/:id", addSubscriptionMonth);
+router.get("/getSubscriptionMonth", getSubscriptionMonth);
+router.post("/updateSubscriptionMonth/:id", updateSubscriptionMonth);
+router.post("/deleteSubscriptionMonth/:id", deleteSubscriptionMonth);
 module.exports = router;
