@@ -42,5 +42,5 @@ router.get("/deleteSubscriptionPoint/:id", deleteSubscriptionPoint);
 router.post("/addSubscriptionMonth/:id", addSubscriptionMonth);
 router.get("/getSubscriptionMonth/:id", getSubscriptionMonth);
 router.post("/updateSubscriptionMonth/:id", updateSubscriptionMonth);
-router.post("/deleteSubscriptionMonth/:id", deleteSubscriptionMonth);
+router.get("/deleteSubscriptionMonth/:id", deleteSubscriptionMonth);
 module.exports = router;

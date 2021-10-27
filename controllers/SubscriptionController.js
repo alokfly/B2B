@@ -101,10 +101,8 @@ module.exports.updateSubscriptionPoints = async (req, res) => {
 module.exports.deleteSubscriptionPoint = async (req, res) => {
   const id = req.params.id;
   try {
-    const response = SubscriptionPoint.findByIdAndRemove(id);
-    return res
-      .status(200)
-      .json({ msg: "Subscription points successfully deleted" });
+    const response = await SubscriptionPoint.findByIdAndDelete(id);
+    res.status(200).send({ msg: "Subscription points successfully deleted" });
   } catch (error) {
     console.log(error);
   }
@@ -159,10 +157,8 @@ module.exports.updateSubscriptionMonth = async (req, res) => {
 module.exports.deleteSubscriptionMonth = async (req, res) => {
   const id = req.params.id;
   try {
-    const response = SubscriptionMonth.findByIdAndRemove(id);
-    return res
-      .status(200)
-      .json({ msg: "Subscription points successfully deleted" });
+    const response = await SubscriptionMonth.findByIdAndDelete(id);
+    res.status(200).send({ msg: "Subscription month successfully deleted" });
   } catch (error) {
     console.log(error);
   }
