@@ -19,6 +19,10 @@ const {
 } = require("../controllers/SubscriptionController");
 router.post("/addSubscription", upload.single("myField"), addSubscription);
 router.get("/getSubscriptionDetails", getSubscriptionDetails);
-router.post("/updateSubscription/:id", updateSubscription);
+router.post(
+  "/updateSubscription/:id",
+  upload.single("myField"),
+  updateSubscription
+);
 router.get("/deleteSubscription/:id", deleteSubscription);
 module.exports = router;
