@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const connect = require("./config/db");
 const subscriptionRoutes = require("./routes/subscriptionRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
+const subCategoryRoutes = require("./routes/subCategoryRoutes");
 var cors = require("cors");
 
 require("dotenv").config();
@@ -23,6 +25,8 @@ app.use(function (req, res, next) {
 connect();
 app.use(bodyParser.json());
 app.use("/", subscriptionRoutes);
+app.use("/", categoryRoutes);
+app.use("/", subCategoryRoutes);
 
 // demoflyweis.in:5060
 
