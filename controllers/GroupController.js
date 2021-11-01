@@ -3,14 +3,11 @@ var ObjectId = require("mongodb").ObjectID;
 
 module.exports.addGroup = async (req, res) => {
   let image = req.file ? req.file.filename : null;
-  let { name, categoryId, category_name, subCategoryId, sub_category_name } =
-    req.body;
+  let { name, category_name, sub_category_name } = req.body;
   try {
     const response = await Group.create({
       name,
-      categoryId,
       category_name,
-      subCategoryId,
       sub_category_name,
       image,
     });
@@ -31,8 +28,7 @@ module.exports.getGroupDetail = async (req, res) => {
 
 module.exports.updateGroup = async (req, res) => {
   let image = req.file ? req.file.filename : null;
-  let { name, categoryId, category_name, subCategoryId, sub_category_name } =
-    req.body;
+  let { name, category_name, sub_category_name } = req.body;
   try {
     const response = await Group.findByIdAndUpdate(
       {
@@ -40,9 +36,7 @@ module.exports.updateGroup = async (req, res) => {
       },
       {
         name,
-        categoryId,
         category_name,
-        subCategoryId,
         sub_category_name,
         image,
       }

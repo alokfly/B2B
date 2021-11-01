@@ -9,23 +9,9 @@ const groupSchema = new Schema(
       type: String,
       required: true,
     },
-    categoryId: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "categories",
-        required: true,
-      },
-    ],
     category_name: [
       {
         type: String,
-        required: true,
-      },
-    ],
-    subCategoryId: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "subcategories",
         required: true,
       },
     ],
