@@ -14,6 +14,15 @@ module.exports.addSubCategory = async (req, res) => {
   }
 };
 
+module.exports.getSubCategory = async (req, res) => {
+  try {
+    const response = await SubCategory.find();
+    return res.status(200).send(response);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports.getSubCategoryDetail = async (req, res) => {
   try {
     const response = await SubCategory.find({
