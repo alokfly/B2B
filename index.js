@@ -5,6 +5,7 @@ const subscriptionRoutes = require("./routes/subscriptionRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const groupRoutes = require("./routes/groupRoutes");
 var cors = require("cors");
 
 require("dotenv").config();
@@ -29,6 +30,7 @@ app.use("/", subscriptionRoutes);
 app.use("/", categoryRoutes);
 app.use("/", subCategoryRoutes);
 app.use("/", adminRoutes);
+app.use("/", groupRoutes);
 
 // demoflyweis.in:5060
 
