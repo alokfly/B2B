@@ -16,6 +16,12 @@ const groupSchema = new Schema(
         required: true,
       },
     ],
+    category_name: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
     subCategoryId: [
       {
         type: Schema.Types.ObjectId,
@@ -23,6 +29,16 @@ const groupSchema = new Schema(
         required: true,
       },
     ],
+    sub_category_name: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    image: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -3,12 +3,15 @@ var ObjectId = require("mongodb").ObjectID;
 
 module.exports.addGroup = async (req, res) => {
   let image = req.file ? req.file.filename : null;
-  let { name, categoryId, subCategoryId } = req.body;
+  let { name, categoryId, category_name, subCategoryId, sub_category_name } =
+    req.body;
   try {
     const response = await Group.create({
       name,
       categoryId,
+      category_name,
       subCategoryId,
+      sub_category_name,
       image,
     });
     res.status(200).json({ msg: "Group has been submitted" });
@@ -28,7 +31,8 @@ module.exports.getGroupDetail = async (req, res) => {
 
 module.exports.updateGroup = async (req, res) => {
   let image = req.file ? req.file.filename : null;
-  let { name, categoryId, subCategoryId } = req.body;
+  let { name, categoryId, category_name, subCategoryId, sub_category_name } =
+    req.body;
   try {
     const response = await Group.findByIdAndUpdate(
       {
@@ -37,7 +41,9 @@ module.exports.updateGroup = async (req, res) => {
       {
         name,
         categoryId,
+        category_name,
         subCategoryId,
+        sub_category_name,
         image,
       }
     );
