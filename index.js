@@ -8,6 +8,7 @@ const adminRoutes = require("./routes/adminRoutes");
 const groupRoutes = require("./routes/groupRoutes");
 const userRoutes = require("./routes/userRoutes");
 const newsRoutes = require("./routes/newsRoutes");
+const employeeRoutes = require("./routes/employeeRoutes");
 var cors = require("cors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
@@ -35,6 +36,7 @@ app.use("/", adminRoutes);
 app.use("/", groupRoutes);
 app.use("/", userRoutes);
 app.use("/", newsRoutes);
+app.use("/", employeeRoutes);
 
 // demoflyweis.in:5060
 
