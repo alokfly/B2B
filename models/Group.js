@@ -5,19 +5,17 @@ const groupSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-      required: true,
-    },
-    category_name: [
+    category_id: [
       {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "categories",
         required: true,
       },
     ],
-    sub_category_name: [
+    sub_category_id: [
       {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "subcategories",
         required: true,
       },
     ],

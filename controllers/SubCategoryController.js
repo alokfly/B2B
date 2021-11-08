@@ -1,4 +1,5 @@
 const SubCategory = require("../models/SubCategory");
+const Group = require("../models/Group");
 var ObjectId = require("mongodb").ObjectID;
 
 module.exports.addSubCategory = async (req, res) => {
@@ -44,6 +45,13 @@ module.exports.UpdateSubCategory = async (req, res) => {
         name,
       }
     );
+    const updateGroupSubCategory = await Group.findOneAndUpdate(
+      {
+        sub_category_id: req.params.id,
+      },
+      { $set: { sub_category_id: req.params.id } }
+    );
+    console.log(updateGroupSubCategory);
     res.status(200).send({ msg: "Sub Category successfully updated" });
   } catch (error) {
     console.log(error);

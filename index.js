@@ -6,14 +6,16 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const groupRoutes = require("./routes/groupRoutes");
+const userRoutes = require("./routes/userRoutes");
+const newsRoutes = require("./routes/newsRoutes");
 var cors = require("cors");
-
+const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const app = express();
-
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use("/public", express.static("public"));
+app.use(cookieParser());
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -31,6 +33,8 @@ app.use("/", categoryRoutes);
 app.use("/", subCategoryRoutes);
 app.use("/", adminRoutes);
 app.use("/", groupRoutes);
+app.use("/", userRoutes);
+app.use("/", newsRoutes);
 
 // demoflyweis.in:5060
 
