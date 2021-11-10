@@ -78,8 +78,8 @@ module.exports.getNewsContent = async (req, res) => {
 };
 
 module.exports.updateNewsContent = async (req, res) => {
-  let profile = req.file ? req.file.filename : null;
-  let { newsTitle, newsTypeId } = req.body;
+  let { newsTitle, newsTypeId, currentImage } = req.body;
+  let profile = req.file ? req.file.filename : currentImage;
   try {
     const response = await NewsContent.findByIdAndUpdate(
       {
